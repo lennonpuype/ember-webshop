@@ -1,6 +1,6 @@
 <div class="product-details">
   <section>
-    <h3>Beats Solo Wireless Headphones</h3>
+    <h3>{{@productInfo.name}}</h3>
     <div class="text-warning">
       <i class="fa fa-star"></i>
       <i class="fa fa-star"></i>
@@ -10,15 +10,31 @@
     </div>
   </section>
   <section>
-    <del class="small text-black-50">$199.95</del>
-    <i class="text-danger font-weight-bold">$99</i>
+    {{#if @productInfo.discount}}
+    <del class="small text-black-50">${{@productInfo.price}}</del>
+    <i class="text-danger font-weight-bold">${{this.newPrice}}</i>
+    {{else}}
+    <p>${{@productInfo.price}}</p>
+    {{/if}}
+
   </section>
 
+  {{#if @detailPage}}
   <div>
-    <h5>Color</h5>
-    <div class="product-colors active-{{@color}}">
-      <span class="product-color color-red" {{on 'click' (fn @onChangeColor "red")}}></span>
-      <span class="product-color color-black" {{on 'click' (fn @onChangeColor "black")}}></span>
-    </div>
+    <h5 class="mt-5">Description</h5>
+    <p>{{@productInfo.description}}</p>
   </div>
+  <div class="bottom-detail">
+    <div>
+      <h5>Color</h5>
+      <div class="product-colors active-{{@color}}">
+        {{#each @productInfo.options.0.colors as |color|}}
+        <span class="product-color color-{{color}}" {{on 'click' (fn @onChangeColor color)}}></span>
+        {{/each}}
+      </div>
+    </div>
+    <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+  </div>
+  {{/if}}
+
 </div>

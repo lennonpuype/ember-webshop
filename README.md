@@ -1,7 +1,9 @@
-# webstore
+# webstore tutorial - own interpretation
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Made with the following video
+[https://www.youtube.com/watch?v=eQUvN9Ujs1s&list=PLk51HrKSBQ88wDXgPF-QLMfPFlLwcjTlo](https://www.youtube.com/watch?v=eQUvN9Ujs1s&list=PLk51HrKSBQ88wDXgPF-QLMfPFlLwcjTlo).
+
+Waiting on next episode... continuing with what I've learned.
 
 ## Prerequisites
 

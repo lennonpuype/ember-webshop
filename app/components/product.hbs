@@ -1,7 +1,5 @@
-{{!-- <h1>Number: {{this.number}}</h1>
-<button {{on 'click' this.addNumber}}>Add</button> --}}
-
-<LinkTo @route="item" @model="1" class="product">
-  <Product::Image />
-  <Product::Details />
+<LinkTo @route="item" @model={{@productInfo.id}} class="product">
+  <Product::Image @src="/assets/images/{{@productInfo.imageName}}red.png" />
+  <Product::Details @color={{"red"}} @productInfo={{@productInfo}} @detailPage={{false}}
+    @onChangeColor={{this.onChangeColor}} />
 </LinkTo>

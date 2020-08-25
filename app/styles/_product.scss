@@ -79,4 +79,29 @@
   width: 100%;
   box-shadow: none;
   border-radius: 0;
+  overflow: visible;
+
+  .bottom-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .add-to-cart {
+      background-color: #2193b0;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      * {
+        color: white;
+      }
+    }
+  }
 }

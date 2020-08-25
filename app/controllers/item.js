@@ -4,6 +4,8 @@ import { action } from '@ember/object';
 
 export default class ItemController extends Controller {
   @tracked color = 'red';
+  @tracked products = [];
+  @tracked product = null;
 
   get productImage() {
     return `/assets/images/beats-solo-${this.color}.png`;
@@ -12,5 +14,21 @@ export default class ItemController extends Controller {
   @action
   onChangeColor(newColor) {
     this.color = newColor;
+  }
+
+  constructor(props) {
+    super(props);
+    this.loadProduct();
+  }
+
+
+  loadProduct = async () => {
+    const response = await fetch(`/assets/data/products.json`);
+    const data = await response.json();
+    const filteredProduct = data.products.filter(product => {
+      return product.id === parseInt(this.model);
+    })
+
+    this.product = filteredProduct[0];
   }
 }

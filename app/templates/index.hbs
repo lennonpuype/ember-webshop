@@ -1,4 +1,5 @@
 <GeneralContainer>
-  <Product />
-  <Product />
+  {{#each this.products as |product|}}
+  <Product @productInfo={{product}} />
+  {{/each}}
 </GeneralContainer>

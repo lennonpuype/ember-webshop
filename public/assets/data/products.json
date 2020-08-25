@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Beats Solo Wireless Headphones",
+      "description": "With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone",
+      "features": [
+        "High-performance wireless noise cancelling headphones in red",
+        "Active Noise Cancelling (ANC) blocks external noise",
+        "Transparency helps you stay aware of your surroundings while listening",
+        "Features the Apple H1 Headphone Chip and Class 1 Bluetooth for extended range and fewer dropouts",
+        "Compatible with iOS and Android",
+        "Hands-free controls via “Hey Siri” on iOS devices, and voice capability with the push of the b button on avariety ofcompatible devices",
+        "Up to 22 hours of listening time (up to 40 hours with ANC and Transparency turned off)"
+      ],
+      "price": 199.95,
+      "discount": null,
+      "options": [
+        {
+          "colors": [
+            "red",
+            "black"
+          ]
+        }
+      ],
+      "imageName": "beats-solo-"
+    }
+  ]
+}
