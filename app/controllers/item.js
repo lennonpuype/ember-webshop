@@ -18,9 +18,12 @@ export default class ItemController extends Controller {
 
   constructor(props) {
     super(props);
-    this.loadProduct();
-  }
 
+
+    this.loadProduct();
+    const model = this.get('model');
+    console.log("MODEL", model);
+  }
 
   loadProduct = async () => {
     const response = await fetch(`/assets/data/products.json`);

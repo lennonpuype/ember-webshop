@@ -18,20 +18,4 @@
     {{/if}}
 
   </section>
-
-  <div>
-    <h5 class="mt-5">Description</h5>
-    <p>{{@productInfo.description}}</p>
-  </div>
-  <div class="bottom-detail">
-    <div>
-      <h5>Color</h5>
-      <div class="product-colors active-{{@color}}">
-        {{#each @productInfo.options.0.colors as |color|}}
-        <span class="product-color color-{{color}}" {{on 'click' (fn @onChangeColor color)}}></span>
-        {{/each}}
-      </div>
-    </div>
-    <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to cart</button>
-  </div>
 </div>

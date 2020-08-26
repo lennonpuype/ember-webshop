@@ -14,6 +14,5 @@ export default class IndexController extends Controller {
     const response = await fetch(`/assets/data/products.json`);
     const data = await response.json();
     this.products = data.products;
-    console.log(this.products);
   }
 }

@@ -1,4 +1,4 @@
-<LinkTo @route="item" @model={{@productInfo.id}} class="product">
+<LinkTo @route="item-detail" @model={{@productInfo}} class="product">
   <Product::Image @src="/assets/images/{{@productInfo.imageName}}red.png" />
   <Product::Details @color={{"red"}} @productInfo={{@productInfo}} @detailPage={{false}}
     @onChangeColor={{this.onChangeColor}} />
