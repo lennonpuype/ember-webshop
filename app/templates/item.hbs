@@ -1,6 +1,18 @@
 <GeneralContainer>
   <div class="product item-details-page">
-    <Product::Image @src={{this.productImage}} />
-    <Product::Summary @color={{this.color}} @productInfo={{this.product}} @onChangeColor={{this.onChangeColor}} />
+    <Product::Image @src='/assets/images/{{this.product.imageName}}{{this.color}}.png' />
+    <Product::Details @color={{this.color}} @detailPage={{true}} @discountedPrice={{this.discountedPrice}}
+      @productInfo={{this.product}} @onChangeColor={{this.onChangeColor}} />
   </div>
+
+  <h5 class="mt-5">Features</h5>
+
+
+  <ul>
+    {{#each this.product.features as |feature|}}
+    <li>{{feature}}</li>
+    {{/each}}
+  </ul>
+
+
 </GeneralContainer>

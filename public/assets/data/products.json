@@ -24,6 +24,27 @@
         }
       ],
       "imageName": "beats-solo-"
+    },
+    {
+      "id": 2,
+      "name": "Apple watch series 5 Nike Sport | 44mm",
+      "description": "Get connected through sport. Apple Watch Nike is the perfect running partner with the Nike Run Club app. Featuring a world of workouts, coaching, and motivation to help take your fitness to the next level. And with Apple Watch Series 5, every Nike watch face is optimized for the Always-On Retina display.",
+      "features": [
+        "Always on display",
+        "Get heartrates",
+        "Muchmuch more"
+      ],
+      "price": 399,
+      "discount": 5,
+      "options": [
+        {
+          "colors": [
+            "white",
+            "black"
+          ]
+        }
+      ],
+      "imageName": "apple-watch-series-5-"
     }
   ]
 }

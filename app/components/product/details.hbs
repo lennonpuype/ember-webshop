@@ -1,3 +1,4 @@
+{{log discountedPrice}}
 <div class="product-details">
   <section>
     <h3>{{@productInfo.name}}</h3>
@@ -12,13 +13,14 @@
   <section>
     {{#if @productInfo.discount}}
     <del class="small text-black-50">${{@productInfo.price}}</del>
-    <i class="text-danger font-weight-bold">${{this.newPrice}}</i>
+    <i class="text-danger font-weight-bold">${{@discountedPrice}}</i>
     {{else}}
-    <p>${{@productInfo.price}}</p>
+    <p class="small text-black-50">${{@productInfo.price}}</p>
     {{/if}}
 
   </section>
 
+  {{#if @detailPage}}
   <div>
     <h5 class="mt-5">Description</h5>
     <p>{{@productInfo.description}}</p>
@@ -32,6 +34,9 @@
         {{/each}}
       </div>
     </div>
-    <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+    <button type="button" {{on 'click' (fn this.addProductToCart @productInfo @color)}} class="add-to-cart"><i
+        class="fa fa-shopping-cart"></i> Add to cart</button>
   </div>
+  {{/if}}
+
 </div>

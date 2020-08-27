@@ -1,7 +1,9 @@
 <LinkTo @route="cart" class="cart-link">
   <i class="fa fa-shopping-cart"></i>
+  {{!-- {{#if this.cartAmount}} --}}
+  <span class="amount">{{this.cartAmount}}</span>
+  {{!-- {{/if}} --}}
 </LinkTo>
-
 
 <main class="container mt-5">
   {{yield}}

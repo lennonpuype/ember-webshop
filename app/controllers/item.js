@@ -3,13 +3,10 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class ItemController extends Controller {
-  @tracked color = 'red';
+  @tracked color = '';
   @tracked products = [];
   @tracked product = null;
 
-  get productImage() {
-    return `/assets/images/beats-solo-${this.color}.png`;
-  }
 
   @action
   onChangeColor(newColor) {
@@ -18,11 +15,7 @@ export default class ItemController extends Controller {
 
   constructor(props) {
     super(props);
-
-
     this.loadProduct();
-    const model = this.get('model');
-    console.log("MODEL", model);
   }
 
   loadProduct = async () => {
@@ -31,7 +24,16 @@ export default class ItemController extends Controller {
     const filteredProduct = data.products.filter(product => {
       return product.id === parseInt(this.model);
     })
-
     this.product = filteredProduct[0];
+  }
+
+  get discountedPrice() {
+    if (this.product.discount !== null) {
+      const discount = this.product.price * (this.product.discount / 100);
+      const price = this.product.price - discount;
+      return price;
+    } else {
+      return false;
+    }
   }
 }

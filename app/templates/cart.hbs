@@ -8,18 +8,44 @@
     </li>
     <li class="breadcrumb-item">Shopping Cart</li>
   </ol>
+  <section class="cart-items">
+    {{#each this.orders as |order index|}}
+    <article class="cart-item">
+      <img src="assets/images/{{order.shortName}}.png" />
+      <div class="info">
+        <h4>{{order.product.name}}</h4>
+        <p>{{order.product.description}}</p>
+      </div>
+      <div class="price">
+        {{#if order.product.discount}}
+        {{!-- <p>${{order.product.price * (order.product.discount / 100)}}</p> --}}
+        <del>${{order.product.price}}</del>
+        <p>${{sub order.product.price (mult order.product.price (div order.product.discount 100))}}</p>
+        {{else}}
+        <p>${{order.product.price}}</p>
+        {{/if}}
+
+      </div>
+      <button type="button" class="erase" {{on 'click' (fn this.eraseOrder order index)}}><i
+          class="fa fa-times"></i></button>
+    </article>
+    {{else}}
+    <h4>Uw winkelmandje is leeg</h4>
+    {{/each}}
+  </section>
+
   <section class="w-50 ml-auto text-right mb-5">
     <div class="row">
       <span class="col">Subtotal</span>
-      <span class="col">{{this.subtotal}}</span>
+      <span class="col">${{this.subtotal}}</span>
     </div>
     <div class="row">
       <span class="col">Tax</span>
-      <span class="col">{{this.tax}}</span>
+      <span class="col">${{this.tax}}</span>
     </div>
     <div class="row">
       <span class="col">Total</span>
-      <span class="col">{{this.total}}</span>
+      <span class="col">${{this.total}}</span>
     </div>
   </section>
   <button type="button" class="btn btn-success float-right">
